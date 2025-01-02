@@ -13,6 +13,7 @@
       url = "github:lnl7/nix-darwin/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    hardware.url = "github:nixos/nixos-hardware/master";
     home-manager = {
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:thoughtfull-systems/home-manager/release-24.11";
@@ -37,10 +38,11 @@
     };
     unstable.url = "github:thoughtfull-systems/nixpkgs/nixpkgs-unstable";
   };
-  outputs = { nixfiles, nixpkgs, secrets, ... }: {
+  outputs = { hardware, nixfiles, nixpkgs, secrets, ... }: {
     nixosConfigurations.gemariah = nixpkgs.lib.nixosSystem {
       modules = [
         ./gemariah
+        hardware.nixosModules.lenovo-thinkpad-x1
         nixfiles.nixosModules.default
         secrets.nixosModules.gemariah
       ];

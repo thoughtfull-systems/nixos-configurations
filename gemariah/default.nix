@@ -9,10 +9,6 @@
     ./technosophist.nix
   ];
   networking.hostName = "gemariah";
-  services.tlp.settings = {
-    START_CHARGE_THRESH_BAT0 = lib.mkDefault 45;
-    STOP_CHARGE_THRESH_BAT0 = lib.mkDefault 55;
-  };
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
   #
