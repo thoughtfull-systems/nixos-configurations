@@ -18,7 +18,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:thoughtfull-systems/home-manager/release-24.11";
     };
-    nixfiles = {
+    thoughtfull = {
       inputs = {
         home-manager.follows = "home-manager";
         nixpkgs.follows = "nixpkgs";
@@ -38,12 +38,12 @@
     };
     unstable.url = "github:thoughtfull-systems/nixpkgs/nixpkgs-unstable";
   };
-  outputs = { hardware, nixfiles, nixpkgs, secrets, ... }: {
+  outputs = { hardware, nixpkgs, secrets, thoughtfull, ... }: {
     nixosConfigurations.gemariah = nixpkgs.lib.nixosSystem {
       modules = [
         ./gemariah
         hardware.nixosModules.lenovo-thinkpad-x1
-        nixfiles.nixosModules.default
+        thoughtfull.nixosModules.default
         secrets.nixosModules.gemariah
       ];
       system = "x86_64-linux";

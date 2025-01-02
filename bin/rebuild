@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+flakedir="$(readlink -f $(dirname $0)/..)"
+
+nix flake update --refresh --flake "${flakedir}" \
+    home-manager \
+    nixpkgs \
+    secrets \
+    thoughtfull \
+
+sudo nixos-rebuild switch \
+     --flake "${flakedir}" \
+     --refresh \
+     --override-input secrets "${flakedir}/../nixos-secrets" \
+     --override-input thoughtfull "${flakedir}/../nixfiles" \
+     "${@}"
