@@ -7,7 +7,7 @@ nix flake update --refresh --flake "${flakedir}" \
     home-manager \
     nixpkgs \
     secrets \
-    thoughtfull \
+    thoughtfull
 
 sudo nixos-rebuild switch \
      --flake "${flakedir}" \

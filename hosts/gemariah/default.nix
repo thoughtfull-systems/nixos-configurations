@@ -1,12 +1,12 @@
-{ lib, nixfiles, secrets, ... } : {
+{ config, ... } : {
   boot.loader = {
     efi.canTouchEfiVariables = true;
     systemd-boot.enable = true;
   };
   home-manager.users.root.home.stateVersion = "24.11";
   imports = [
+    ../../users/technosophist
     ./hardware-configuration.nix
-    ./technosophist.nix
   ];
   networking.hostName = "gemariah";
   # This option defines the first version of NixOS you have installed on this particular machine,
@@ -37,5 +37,8 @@
     greek.enable = true;
   };
   time.timeZone = "America/New_York";
-  users.mutableUsers = false;
+  users = {
+    mutableUsers = false;
+    users.root.openssh.authorizedKeys = config.users.users.technosophist.openssh.authorizedKeys;
+  };
 }

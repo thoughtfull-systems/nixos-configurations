@@ -35,6 +35,7 @@
     extraGroups = [ "networkmanager" "video" "wheel" ];
     group = "users";
     isNormalUser = true;
+    openssh.authorizedKeys.keyFiles = [ ./id_ed25519.pub ];
     shell = pkgs.zsh;
     uid = 1000;
   };

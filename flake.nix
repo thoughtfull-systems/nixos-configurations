@@ -41,7 +41,7 @@
   outputs = { hardware, nixpkgs, secrets, thoughtfull, ... }: {
     nixosConfigurations.gemariah = nixpkgs.lib.nixosSystem {
       modules = [
-        ./gemariah
+        ./hosts/gemariah
         hardware.nixosModules.lenovo-thinkpad-x1
         thoughtfull.nixosModules.default
         secrets.nixosModules.gemariah
