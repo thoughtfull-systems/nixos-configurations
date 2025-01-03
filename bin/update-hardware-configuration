@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+flakedir="$(readlink -f $(dirname $0)/..)"
+
+if [[ -v 1 ]]; then
+  hostname=${1}
+  ssh="ssh ${hostname}.lan"
+elif [[ -v 2 ]]; then
+  echo "Expects a single argument, the host name" >&2
+  exit 1
+else
+  hostname=$(hostname -s)
+  ssh=""
+fi
+
+filepath="${flakedir}/${hostname}/hardware-configuration.nix"
+
+${ssh} nixos-generate-config --show-hardware-config >${filepath}
