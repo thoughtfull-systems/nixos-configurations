@@ -15,6 +15,6 @@ else
   ssh=""
 fi
 
-filepath="${flakedir}/${hostname}/hardware-configuration.nix"
+filepath="${flakedir}/hosts/${hostname}/hardware-configuration.nix"
 
 ${ssh} nixos-generate-config --show-hardware-config >${filepath}
