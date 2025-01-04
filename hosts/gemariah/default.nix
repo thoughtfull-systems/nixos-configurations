@@ -1,4 +1,4 @@
-{ config, ... } : {
+{ config, pkgs, ... } : {
   boot.loader = {
     efi.canTouchEfiVariables = true;
     systemd-boot.enable = true;
@@ -9,6 +9,14 @@
     ./hardware-configuration.nix
   ];
   networking.hostName = "gemariah";
+  security.acme.defaults.email = "technosophist@thoughtfull.systems";
+  services = {
+    displayManager.autoLogin = {
+      enable = true;
+      user = "technosophist";
+    };
+    printing.drivers = [ pkgs.cups-brother-mfcl2750dw ];
+  };
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
   #
@@ -29,7 +37,7 @@
   system.stateVersion = "24.11";
   thoughtfull = {
     autoUpgrade = {
-      flake = "github:thoughtfull-systems/nixfiles/nixos-24.11";
+      flake = "github:thoughtfull-systems/nixos-configuration/main";
       inputs = [ "nixpkgs" ];
     };
     deploy-keys = [ { name = "nixfiles-secrets"; } ];
