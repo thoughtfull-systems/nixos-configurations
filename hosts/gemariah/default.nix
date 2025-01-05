@@ -40,7 +40,7 @@
       flake = "github:thoughtfull-systems/nixos-configurations/main";
       inputs = [ "nixpkgs" ];
     };
-    deploy-keys = [ { name = "nixfiles-secrets"; } ];
+    deploy-keys = [ { name = "nixos-secrets"; } ];
     desktop.enable = true;
     greek.enable = true;
   };
