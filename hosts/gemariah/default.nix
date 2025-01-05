@@ -37,7 +37,7 @@
   system.stateVersion = "24.11";
   thoughtfull = {
     autoUpgrade = {
-      flake = "github:thoughtfull-systems/nixos-configuration/main";
+      flake = "github:thoughtfull-systems/nixos-configurations/main";
       inputs = [ "nixpkgs" ];
     };
     deploy-keys = [ { name = "nixfiles-secrets"; } ];
