@@ -1,7 +1,10 @@
 { config, pkgs, ... } : {
-  boot.loader = {
-    efi.canTouchEfiVariables = true;
-    systemd-boot.enable = true;
+  boot = {
+    binfmt.emulatedSystems = [ "aarch64-linux" ];
+    loader = {
+      efi.canTouchEfiVariables = true;
+      systemd-boot.enable = true;
+    };
   };
   home-manager.users.root.home.stateVersion = "24.11";
   imports = [

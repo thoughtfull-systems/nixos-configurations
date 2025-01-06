@@ -86,11 +86,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1736039986,
-        "narHash": "sha256-Pc7nf4drWxSal3Q35XK5trIp0jysstyfy14Chx1HeLo=",
+        "lastModified": 1736126263,
+        "narHash": "sha256-q2FmYl+TNkTEsA5xJIpBlRHWki6BTeF09lihM/wjkUE=",
         "owner": "thoughtfull-systems",
         "repo": "nixpkgs",
-        "rev": "f3fd5a137ee29ec780f4fe5e522e67f32b137298",
+        "rev": "e29fa2e52b5a792dcd0dfe8264f30c546e9b8a57",
         "type": "github"
       },
       "original": {
