@@ -8,7 +8,10 @@
     ../../users/technosophist
     ./hardware-configuration.nix
   ];
-  networking.hostName = "gemariah";
+  networking = {
+    domain = "thoughtfull.systems";
+    hostName = "gemariah";
+  };
   security.acme.defaults.email = "technosophist@thoughtfull.systems";
   services = {
     displayManager.autoLogin = {
