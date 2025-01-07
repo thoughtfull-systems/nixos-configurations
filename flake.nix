@@ -38,14 +38,25 @@
     unstable.url = "github:thoughtfull-systems/nixpkgs/nixpkgs-unstable";
   };
   outputs = { nixos-hardware, nixpkgs, secrets, thoughtfull, ... }: {
-    nixosConfigurations.gemariah = nixpkgs.lib.nixosSystem {
-      modules = [
-        ./hosts/gemariah
-        nixos-hardware.nixosModules.lenovo-thinkpad-x1
-        thoughtfull.nixosModules.default
-        secrets.nixosModules.gemariah
-      ];
-      system = "x86_64-linux";
+    nixosConfigurations = {
+      gemariah = nixpkgs.lib.nixosSystem {
+        modules = [
+          ./hosts/gemariah
+          nixos-hardware.nixosModules.lenovo-thinkpad-x1
+          secrets.nixosModules.gemariah
+          thoughtfull.nixosModules.default
+        ];
+        system = "x86_64-linux";
+      };
+      naarah = nixpkgs.lib.nixosSystem {
+        modules = [
+          ./hosts/naarah
+          nixos-hardware.nixosModules.raspberry-pi-4
+          secrets.nixosModules.naarah
+          thoughtfull.nixosModules.default
+        ];
+        system = "aarch64-linux";
+      };
     };
   };
 }

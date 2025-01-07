@@ -1,45 +1,11 @@
 { pkgs, secrets, ... }: {
-  home-manager.users.technosophist = {
-    home = {
-      file.".config/emacs/init.el".source = ./init.el;
-      stateVersion = "24.11";
+  home-manager.users.technosophist.programs = {
+    git = {
+      enable = true;
+      userEmail = "technosophist@thoughtfull.systems";
+      userName = "technosophist";
     };
-    programs = {
-      emacs.extraPackages = epkgs: with epkgs; [
-        tfl-gtd
-        tfl-ol-obsidian
-        tfl-org
-        tfl-org-bullets
-        tfl-org-capture
-        tfl-org-faces
-      ];
-      git = {
-        enable = true;
-        userEmail = "technosophist@thoughtfull.systems";
-        userName = "technosophist";
-      };
-      zsh.enable = true;
-    };
-    thoughtfull = {
-      clojure.enable = true;
-      gnome-terminal.enable = true;
-      javascript = {
-        enable = true;
-        nodejs-package = pkgs.nodejs_18;
-      };
-      services.syncthing-init.folders = {
-        archive.enable = true;
-        obsidian.enable = true;
-        obsidian-work.enable = true;
-        org.enable = true;
-        org-work.enable = true;
-        sync = {
-          devices = [ "phone" ];
-          enable = true;
-        };
-      };
-    };
-    xfconf.settings.pointers."TPPS2_Elan_TrackPoint/Acceleration" = 6.5;
+    zsh.enable = true;
   };
   users.users.technosophist = {
     description = "technosophist";

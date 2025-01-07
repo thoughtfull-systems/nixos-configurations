@@ -6,7 +6,52 @@
       systemd-boot.enable = true;
     };
   };
-  home-manager.users.root.home.stateVersion = "24.11";
+  home-manager.users = {
+    root.home.stateVersion = "24.11";
+    technosophist = {
+      home = {
+        stateVersion = "24.11";
+        file.".config/emacs/init.el".source = ./init.el;
+      };
+      programs.emacs.extraPackages = epkgs: with epkgs; [
+        tfl-gtd
+        tfl-ol-obsidian
+        tfl-org
+        tfl-org-bullets
+        tfl-org-capture
+        tfl-org-faces
+      ];
+      thoughtfull = {
+        clojure.enable = true;
+        gnome-terminal.enable = true;
+        javascript = {
+          enable = true;
+          nodejs-package = pkgs.nodejs_18;
+        };
+        services.syncthing-init.folders = {
+          archive = {
+            devices = [ "naarah" ];
+            enable = true;
+          };
+          obsidian = {
+            devices = [ "naarah" ];
+            enable = true;
+          };
+          obsidian-work.enable = true;
+          org = {
+            devices = [ "naarah" ];
+            enable = true;
+          };
+          org-work.enable = true;
+          sync = {
+            devices = [ "naarah" "phone" ];
+            enable = true;
+          };
+        };
+      };
+      xfconf.settings.pointers."TPPS2_Elan_TrackPoint/Acceleration" = 6.5;
+    };
+  };
   imports = [
     ../../users/technosophist
     ./hardware-configuration.nix
@@ -51,8 +96,5 @@
     greek.enable = true;
   };
   time.timeZone = "America/New_York";
-  users = {
-    mutableUsers = false;
-    users.root.openssh.authorizedKeys = config.users.users.technosophist.openssh.authorizedKeys;
-  };
+  users.users.root.openssh.authorizedKeys = config.users.users.technosophist.openssh.authorizedKeys;
 }
