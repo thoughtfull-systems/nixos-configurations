@@ -34,12 +34,12 @@
             enable = true;
           };
           obsidian = {
-            devices = [ "naarah" ];
+            devices = [ "naarah" "phone" ];
             enable = true;
           };
           obsidian-work.enable = true;
           org = {
-            devices = [ "naarah" ];
+            devices = [ "naarah" "phone" ];
             enable = true;
           };
           org-work.enable = true;

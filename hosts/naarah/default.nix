@@ -36,12 +36,12 @@
           enable = true;
         };
         obsidian = {
-          devices = [ "gemariah" ];
+          devices = [ "gemariah" "phone" ];
           enable = true;
         };
         obsidian-work.enable = true;
         org = {
-          devices = [ "gemariah" ];
+          devices = [ "gemariah" "phone" ];
           enable = true;
         };
         org-work.enable = true;
