@@ -21,6 +21,9 @@
         tfl-org-capture
         tfl-org-faces
       ];
+      services.syncthing.extraOptions = [
+        "-gui-address=0.0.0.0:8384"
+      ];
       thoughtfull = {
         clojure.enable = true;
         gnome-terminal.enable = true;
@@ -58,6 +61,7 @@
   ];
   networking = {
     domain = "thoughtfull.systems";
+    firewall.allowedTCPPorts = [ 8384 ];
     hostName = "gemariah";
   };
   security.acme.defaults.email = "technosophist@thoughtfull.systems";

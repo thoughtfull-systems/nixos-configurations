@@ -67,6 +67,7 @@
   ];
   networking = {
     domain = "thoughtfull.systems";
+    firewall.allowedTCPPorts = [ 8384 ];
     hostName = "naarah";
     interfaces.end0.useDHCP = true;
   };
