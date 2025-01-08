@@ -39,12 +39,12 @@
           devices = [ "gemariah" "phone" ];
           enable = true;
         };
-        obsidian-work.enable = true;
+        obsidian-work.enable = false;
         org = {
           devices = [ "gemariah" "phone" ];
           enable = true;
         };
-        org-work.enable = true;
+        org-work.enable = false;
         sync = {
           devices = [ "gemariah" "phone" ];
           enable = true;
