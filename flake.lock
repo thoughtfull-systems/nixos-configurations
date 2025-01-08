@@ -86,11 +86,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1736126263,
-        "narHash": "sha256-q2FmYl+TNkTEsA5xJIpBlRHWki6BTeF09lihM/wjkUE=",
+        "lastModified": 1736298870,
+        "narHash": "sha256-Hn8P7JfXKV5+FQA7WOLWM5qOI6xpwlsMrvWTIA+hU1E=",
         "owner": "thoughtfull-systems",
         "repo": "nixpkgs",
-        "rev": "e29fa2e52b5a792dcd0dfe8264f30c546e9b8a57",
+        "rev": "e32c74c32ecae62f5f878c276b6ed6476412cb7e",
         "type": "github"
       },
       "original": {
@@ -128,11 +128,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1736289468,
-        "narHash": "sha256-zXaK2NaNbNLjOHYXy3akKr0QXZaZTCaa4ApBHXLlfTA=",
+        "lastModified": 1736372788,
+        "narHash": "sha256-99Y5c0qQKYGaW2UG/4AARshsqDRgtNqMX/AXMxSO5Vg=",
         "ref": "refs/heads/main",
-        "rev": "7127be90e5d8ec5321094d1e51629deb01407beb",
-        "revCount": 14,
+        "rev": "4e7815f8da0b8f38830bf40773ab990d2887651a",
+        "revCount": 15,
         "type": "git",
         "url": "ssh://git@github.com/thoughtfull-systems/nixos-secrets"
       },
