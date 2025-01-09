@@ -56,11 +56,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1735350001,
-        "narHash": "sha256-V/d0BtVgiQwakqygdYF0CZjmWLWuu5Lt+NRohDId5/w=",
+        "lastModified": 1736388603,
+        "narHash": "sha256-sUIsSsWSmzXiwOM3k01GRT78gEwdziNDrmBF0c6pumg=",
         "owner": "thoughtfull-systems",
         "repo": "home-manager",
-        "rev": "6732bef96909c57cf473887dc4f02c949bdb66cf",
+        "rev": "2e8f801d4ff5d6ece9c22a7655a9b03d5a7e2482",
         "type": "github"
       },
       "original": {
