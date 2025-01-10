@@ -6,6 +6,11 @@
       systemd-boot.enable = true;
     };
   };
+  hardware = {
+    acpilight.enable = true;
+    bluetooth.enable = true;
+    graphics.enable = true;
+  };
   home-manager.users = {
     root.home.stateVersion = "24.11";
     technosophist = {
