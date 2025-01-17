@@ -17,6 +17,12 @@
       home = {
         stateVersion = "24.11";
         file.".config/emacs/init.el".source = ./init.el;
+        packages = with pkgs; [
+          gimp
+          google-chrome
+          hugo
+          inkscape
+        ];
       };
       programs.emacs.extraPackages = epkgs: with epkgs; [
         tfl-gtd
@@ -69,6 +75,7 @@
     firewall.allowedTCPPorts = [ 8384 ];
     hostName = "gemariah";
   };
+  programs.adb.enable = true;
   security.acme.defaults.email = "technosophist@thoughtfull.systems";
   services = {
     displayManager.autoLogin = {
@@ -105,5 +112,8 @@
     greek.enable = true;
   };
   time.timeZone = "America/New_York";
-  users.users.root.openssh.authorizedKeys = config.users.users.technosophist.openssh.authorizedKeys;
+  users.users = {
+    root.openssh.authorizedKeys = config.users.users.technosophist.openssh.authorizedKeys;
+    technosophist.extraGroups = [ "adbusers" ];
+  };
 }
