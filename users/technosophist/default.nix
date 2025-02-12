@@ -1,11 +1,14 @@
 { pkgs, secrets, ... }: {
-  home-manager.users.technosophist.programs = {
+  home-manager.users.technosophist = {
+    home.packages = with pkgs; [ proton-pass ];
+    programs = {
     git = {
       enable = true;
       userEmail = "technosophist@thoughtfull.systems";
       userName = "technosophist";
     };
     zsh.enable = true;
+  };
   };
   users.users.technosophist = {
     description = "technosophist";
