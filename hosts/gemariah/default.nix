@@ -114,6 +114,10 @@
   time.timeZone = "America/New_York";
   users.users = {
     root.openssh.authorizedKeys = config.users.users.technosophist.openssh.authorizedKeys;
-    technosophist.extraGroups = [ "adbusers" ];
+    technosophist.extraGroups = [ "adbusers" "docker" ];
+  };
+  virtualisation.docker = {
+    autoPrune.enable = true;
+    enable = true;
   };
 }
