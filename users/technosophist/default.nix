@@ -1,6 +1,6 @@
-{ pkgs, secrets, ... }: {
+{ config, lib, pkgs, secrets, ... }: {
   home-manager.users.technosophist = {
-    home.packages = with pkgs; [ proton-pass ];
+    home.packages = lib.mkIf config.thoughtfull.desktop.enable [ pkgs.proton-pass ];
     programs = {
     git = {
       enable = true;
