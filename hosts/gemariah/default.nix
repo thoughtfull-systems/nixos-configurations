@@ -83,6 +83,10 @@
       user = "technosophist";
     };
     printing.drivers = [ pkgs.cups-brother-mfcl2750dw ];
+    tlp.settings = {
+      START_CHARGE_THRESH_BAT0 = 70;
+      STOP_CHARGE_THRESH_BAT0 = 100;
+    };
   };
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
