@@ -40,22 +40,16 @@
   outputs = { nixos-hardware, nixpkgs, secrets, thoughtfull, ... }: {
     nixosConfigurations = {
       gemariah = nixpkgs.lib.nixosSystem {
-        modules = [
-          ./hosts/gemariah
-          nixos-hardware.nixosModules.lenovo-thinkpad-x1
-          secrets.nixosModules.gemariah
-          thoughtfull.nixosModules.default
-        ];
-        system = "x86_64-linux";
+        modules = [ ./hosts/gemariah ];
+        specialArgs = {
+          inherit nixos-hardware secrets thoughtfull;
+        };
       };
       naarah = nixpkgs.lib.nixosSystem {
-        modules = [
-          ./hosts/naarah
-          nixos-hardware.nixosModules.raspberry-pi-4
-          secrets.nixosModules.naarah
-          thoughtfull.nixosModules.default
-        ];
-        system = "aarch64-linux";
+        modules = [ ./hosts/naarah ];
+        specialArgs = {
+          inherit nixos-hardware secrets thoughtfull;
+        };
       };
     };
   };

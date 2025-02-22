@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: {
+{ config, nixos-hardware, inputs, pkgs, secrets, thoughtfull, ... }: {
   boot = {
     initrd = {
       availableKernelModules = [
@@ -64,6 +64,9 @@
   imports = [
     ../../users/technosophist
     ./hardware-configuration.nix
+    nixos-hardware.nixosModules.raspberry-pi-4
+    secrets.nixosModules.naarah
+    thoughtfull.nixosModules.default
   ];
   networking = {
     domain = "thoughtfull.systems";

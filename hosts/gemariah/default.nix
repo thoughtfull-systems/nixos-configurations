@@ -1,4 +1,4 @@
-{ config, pkgs, ... } : {
+{ config, nixos-hardware, pkgs, secrets, thoughtfull, ... } : {
   boot = {
     binfmt.emulatedSystems = [ "aarch64-linux" ];
     loader = {
@@ -69,6 +69,9 @@
   imports = [
     ../../users/technosophist
     ./hardware-configuration.nix
+    nixos-hardware.nixosModules.lenovo-thinkpad-x1
+    secrets.nixosModules.gemariah
+    thoughtfull.nixosModules.default
   ];
   networking = {
     domain = "thoughtfull.systems";
