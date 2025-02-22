@@ -130,19 +130,13 @@
       inputs = [ "nixpkgs" ];
     };
     deploy-keys = [
+      { name = "adoram"; }
       { name = "nixfiles"; }
       { name = "nixos-secrets"; }
     ];
     notify-reboot = {
       from = "technosophist@thoughtfull.systems";
       to = "technosophist@thoughtfull.systems";
-    };
-    nginx.proxies = {
-      "bw.thoughtfull.systems".backend = "http://localhost:8000";
-      "social.thoughtfull.systems" = {
-        backend = "http://localhost:8002";
-      };
-      "webdav.thoughtfull.systems".backend = "http://localhost:8001";
     };
     restic = {
       exclude = [

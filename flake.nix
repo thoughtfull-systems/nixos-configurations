@@ -39,6 +39,12 @@
   };
   outputs = { nixos-hardware, nixpkgs, secrets, thoughtfull, ... }: {
     nixosConfigurations = {
+      adoram = nixpkgs.lib.nixosSystem {
+        modules = [ ./hosts/adoram ];
+        specialArgs = {
+          inherit nixos-hardware nixpkgs secrets thoughtfull;
+        };
+      };
       gemariah = nixpkgs.lib.nixosSystem {
         modules = [ ./hosts/gemariah ];
         specialArgs = {
