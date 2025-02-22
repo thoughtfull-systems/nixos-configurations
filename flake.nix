@@ -17,14 +17,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:thoughtfull-systems/home-manager/release-24.11";
     };
-    thoughtfull = {
-      inputs = {
-        home-manager.follows = "home-manager";
-        nixpkgs.follows = "nixpkgs";
-        unstable.follows = "unstable";
-      };
-      url = "github:thoughtfull-systems/nixfiles/nixos-24.11";
-    };
     nixpkgs.url = "github:thoughtfull-systems/nixpkgs/nixos-24.11";
     secrets = {
       inputs = {
@@ -34,6 +26,14 @@
         nixpkgs.follows = "nixpkgs";
       };
       url = "git+ssh://git@github.com/thoughtfull-systems/nixos-secrets";
+    };
+    thoughtfull = {
+      inputs = {
+        home-manager.follows = "home-manager";
+        nixpkgs.follows = "nixpkgs";
+        unstable.follows = "unstable";
+      };
+      url = "github:thoughtfull-systems/nixfiles/nixos-24.11";
     };
     unstable.url = "github:thoughtfull-systems/nixpkgs/nixpkgs-unstable";
   };
