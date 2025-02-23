@@ -82,6 +82,7 @@
     };
     nginx.proxies = {
       "bw.thoughtfull.systems".backend = "http://localhost:8000";
+      "git.thoughtfull.systems".backend = "http://localhost:8003";
       "social.thoughtfull.systems" = {
         backend = "http://localhost:8002";
       };

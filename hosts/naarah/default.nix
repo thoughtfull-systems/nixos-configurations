@@ -80,6 +80,10 @@
     certs."thoughtfull.systems" = {};
   };
   services = {
+    forgejo = {
+      enable = true;
+      settings.server.DOMAIN = "git.thoughtfull.systems";
+    };
     gotosocial.enable = true;
     nginx = {
       virtualHosts = {
@@ -161,7 +165,7 @@
       enable = true;
       host = "adoram.thoughtfull.systems";
       identity = "/etc/nixos/adoram-deploy-key";
-      ports = [ 8000 8001 8002 ];
+      ports = [ 8000 8001 8002 8003 ];
       user = "root";
     };
   };
