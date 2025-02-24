@@ -82,7 +82,10 @@
   services = {
     forgejo = {
       enable = true;
-      settings.server.DOMAIN = "git.thoughtfull.systems";
+      settings.server = {
+        DOMAIN = "git.thoughtfull.systems";
+        ROOT_URL = "https://git.thoughtfull.systems/";
+      };
     };
     gotosocial.enable = true;
     nginx = {

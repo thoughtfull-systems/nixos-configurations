@@ -169,11 +169,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1740312910,
-        "narHash": "sha256-O/PU43stVTFqM3DAyF16Txi4MBdPRkG8Or5JY8lVDyA=",
+        "lastModified": 1740395240,
+        "narHash": "sha256-T2sCpfQPN4LKqVCVhRuUslOzvR4fpy24oic0X0x3hDs=",
         "owner": "thoughtfull-systems",
         "repo": "nixfiles",
-        "rev": "4d7b318931b2090537a2c78ef8ea5f072ca2d31a",
+        "rev": "1c53da8775f7e61bc9e91987ab5d0993a7241ba6",
         "type": "github"
       },
       "original": {
