@@ -91,6 +91,7 @@
         backend = "http://localhost:8002";
       };
       "webdav.thoughtfull.systems".backend = "http://localhost:8001";
+      "woodpecker.thoughtfull.systems".backend = "http://localhost:8004";
     };
     systemd-notify-failure = {
       from = "technosophist@thoughtfull.systems";

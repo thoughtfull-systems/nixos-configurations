@@ -123,6 +123,31 @@
     openssh.enable = true;
     vaultwarden.enable = true;
     webdav.enable = true;
+    woodpecker-agents.agents.naarah = {
+      enable = true;
+      environment = {
+        WOODPECKER_BACKEND = "local";
+      };
+      path = with pkgs; [
+        # Needed to clone repos
+        git
+        git-lfs
+        woodpecker-plugin-git
+        # Used by the runner as the default shell
+        bash
+        # Most likely to be used in pipeline definitions
+        coreutils
+      ];
+    };
+    woodpecker-server = {
+      enable = true;
+      environment = {
+        WOODPECKER_ADMIN = "technosophist";
+        WOODPECKER_HOST = "https://woodpecker.thoughtfull.systems";
+        WOODPECKER_FORGEJO = "true";
+        WOODPECKER_FORGEJO_URL = "https://git.thoughtfull.systems";
+      };
+    };
   };
   system = {
     autoUpgrade.flags = [
@@ -194,6 +219,10 @@
           {
             local.port = 8003;
             remote.port = 8003;
+          }
+          {
+            local.port = 8004;
+            remote.port = 8004;
           }
         ];
         enable = true;
