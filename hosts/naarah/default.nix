@@ -164,12 +164,31 @@
       from = "technosophist@thoughtfull.systems";
       to = "technosophist@thoughtfull.systems";
     };
-    tunnel = {
-      enable = true;
-      host = "adoram.thoughtfull.systems";
-      identity = "/etc/nixos/adoram-deploy-key";
-      ports = [ 8000 8001 8002 8003 ];
-      user = "root";
+    tunnels = {
+      adoram = {
+        bindings = [
+          {
+            local.port = 8000;
+            remote.port = 8000;
+          }
+          {
+            local.port = 8001;
+            remote.port = 8001;
+          }
+          {
+            local.port = 8002;
+            remote.port = 8002;
+          }
+          {
+            local.port = 8003;
+            remote.port = 8003;
+          }
+        ];
+        enable = true;
+        host = "adoram.thoughtfull.systems";
+        identity = "/etc/nixos/adoram-deploy-key";
+        user = "root";
+      };
     };
   };
   users.users.root.openssh.authorizedKeys = config.users.users.technosophist.openssh.authorizedKeys;
