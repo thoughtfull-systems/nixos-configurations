@@ -78,7 +78,19 @@
     firewall.allowedTCPPorts = [ 8384 ];
     hostName = "gemariah";
   };
-  programs.adb.enable = true;
+  programs = {
+    adb.enable = true;
+    ssh.extraConfig = ''
+      Host adoram.thoughtfull.systems adoram
+      Hostname adoram.thoughtfull.systems
+      User root
+      Port 1980
+
+      Host naarah
+      Hostname naarah.lan
+      User root
+    '';
+  };
   security.acme.defaults.email = "technosophist@thoughtfull.systems";
   services = {
     displayManager.autoLogin = {

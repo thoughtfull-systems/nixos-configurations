@@ -168,6 +168,13 @@
       adoram = {
         bindings = [
           {
+            local.port = 22;
+            remote = {
+              address = "0.0.0.0";
+              port = 22;
+            };
+          }
+          {
             local.port = 8000;
             remote.port = 8000;
           }
@@ -187,6 +194,7 @@
         enable = true;
         host = "adoram.thoughtfull.systems";
         identity = "/etc/nixos/adoram-deploy-key";
+        port = 1980;
         user = "root";
       };
     };

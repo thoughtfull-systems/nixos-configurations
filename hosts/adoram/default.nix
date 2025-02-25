@@ -16,7 +16,7 @@
   ];
   networking = {
     domain = "thoughtfull.systems";
-    firewall.allowedTCPPorts = [ 22 80 443 ];
+    firewall.allowedTCPPorts = [ 22 80 443 1980 ];
     hostName = "adoram";
   };
   nixpkgs.hostPlatform = "aarch64-linux";
@@ -53,7 +53,11 @@
       enable = true;
     };
     nullmailer.config.adminaddr = "technosophist@thoughtfull.systems";
-    openssh.enable = true;
+    openssh = {
+      enable = true;
+      ports = [ 1980 ];
+      settings.GatewayPorts = "yes";
+    };
   };
   system = {
     autoUpgrade.flags = [
