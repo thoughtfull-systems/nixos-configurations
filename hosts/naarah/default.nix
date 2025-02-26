@@ -230,6 +230,7 @@
   };
   users.users.root.openssh.authorizedKeys = config.users.users.technosophist.openssh.authorizedKeys;
   virtualisation.podman = {
+    autoPrune.enable = true;
     defaultNetwork.settings = {
       dns_enabled = true;
     };
