@@ -123,29 +123,24 @@
     openssh.enable = true;
     vaultwarden.enable = true;
     webdav.enable = true;
-    woodpecker-agents.agents.naarah = {
+    woodpecker-agents.agents.podman = {
       enable = true;
       environment = {
-        WOODPECKER_BACKEND = "local";
+        DOCKER_HOST = "unix:///run/podman/podman.sock";
+        WOODPECKER_BACKEND = "docker";
+        WOODPECKER_LOG_LEVEL = "trace";
       };
-      path = with pkgs; [
-        # Needed to clone repos
-        git
-        git-lfs
-        woodpecker-plugin-git
-        # Used by the runner as the default shell
-        bash
-        # Most likely to be used in pipeline definitions
-        coreutils
-      ];
+      extraGroups = [ "podman" ];
     };
     woodpecker-server = {
       enable = true;
       environment = {
         WOODPECKER_ADMIN = "technosophist";
-        WOODPECKER_HOST = "https://woodpecker.thoughtfull.systems";
+        WOODPECKER_FORGE_TIMEOUT = "30s";
         WOODPECKER_FORGEJO = "true";
         WOODPECKER_FORGEJO_URL = "https://git.thoughtfull.systems";
+        WOODPECKER_HOST = "https://woodpecker.thoughtfull.systems";
+        WOODPECKER_LOG_LEVEL = "trace";
       };
     };
   };
@@ -234,4 +229,11 @@
     };
   };
   users.users.root.openssh.authorizedKeys = config.users.users.technosophist.openssh.authorizedKeys;
+  virtualisation.podman = {
+    defaultNetwork.settings = {
+      dns_enabled = true;
+    };
+    dockerCompat = true;
+    enable = true;
+  };
 }
