@@ -194,6 +194,7 @@
       adoram = {
         bindings = [
           {
+            reverse = true;
             local.port = 22;
             remote = {
               address = "0.0.0.0";
@@ -201,22 +202,27 @@
             };
           }
           {
+            reverse = true;
             local.port = 8000;
             remote.port = 8000;
           }
           {
+            reverse = true;
             local.port = 8001;
             remote.port = 8001;
           }
           {
+            reverse = true;
             local.port = 8002;
             remote.port = 8002;
           }
           {
+            reverse = true;
             local.port = 8003;
             remote.port = 8003;
           }
           {
+            reverse = true;
             local.port = 8004;
             remote.port = 8004;
           }
