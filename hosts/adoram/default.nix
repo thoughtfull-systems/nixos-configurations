@@ -1,5 +1,6 @@
-{ config, nixos-hardware, nixpkgs, secrets, thoughtfull, ... }: {
+{ config, nixos-hardware, nixpkgs, pkgs, secrets, thoughtfull, ... }: {
   ec2.efi = true;
+  environment.systemPackages = [ pkgs.glances ];
   home-manager.users.root = {
     home.stateVersion = "24.11";
     programs.tmux = {

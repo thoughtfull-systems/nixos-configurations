@@ -6,6 +6,7 @@
       systemd-boot.enable = true;
     };
   };
+  environment.systemPackages = [ pkgs.glances ];
   hardware = {
     acpilight.enable = true;
     bluetooth.enable = true;

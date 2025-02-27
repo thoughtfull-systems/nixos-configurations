@@ -23,6 +23,7 @@
       generic-extlinux-compatible.enable = true;
     };
   };
+  environment.systemPackages = [ pkgs.glances ];
   hardware.raspberry-pi."4".poe-hat.enable = true;
   home-manager.users = {
     technosophist = {
