@@ -76,10 +76,6 @@
     interfaces.end0.useDHCP = true;
   };
   programs.zsh.enable = true;
-  security.acme = {
-    defaults.email = "technosophist@thoughtfull.systems";
-    certs."thoughtfull.systems" = {};
-  };
   services = {
     forgejo = {
       enable = true;
@@ -94,32 +90,6 @@
       };
     };
     gotosocial.enable = true;
-    nginx = {
-      virtualHosts = {
-        "thoughtfull.systems" = {
-          enableACME = true;
-          forceSSL = true;
-          extraConfig = ''
-            location /.well-known/webfinger {
-              rewrite ^.*$ https://social.thoughtfull.systems/.well-known/webfinger permanent;
-            }
-
-            location /.well-known/host-meta {
-              rewrite ^.*$ https://social.thoughtfull.systems/.well-known/host-meta permanent;
-            }
-
-            location /.well-known/nodeinfo {
-              rewrite ^.*$ https://social.thoughtfull.systems/.well-known/nodeinfo permanent;
-            }
-
-            location / {
-              rewrite ^.*$ $scheme://www.thoughtfull.systems$request_uri? permanent;
-            }
-          '';
-        };
-      };
-      enable = true;
-    };
     nullmailer.config.adminaddr = "technosophist@thoughtfull.systems";
     openssh.enable = true;
     netdata.enable = true;
