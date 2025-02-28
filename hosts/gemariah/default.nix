@@ -98,6 +98,7 @@
       enable = true;
       user = "technosophist";
     };
+    netdata.enable = true;
     printing.drivers = [ pkgs.cups-brother-mfcl2750dw ];
     tlp.settings = {
       START_CHARGE_THRESH_BAT0 = 70;
@@ -127,9 +128,28 @@
       flake = "github:thoughtfull-systems/nixos-configurations/main";
       inputs = [ "nixpkgs" ];
     };
-    deploy-keys = [ { name = "nixos-secrets"; } ];
+    deploy-keys = [
+      { name = "adoram"; }
+      { name = "nixos-secrets"; }
+    ];
     desktop.enable = true;
     greek.enable = true;
+    netdata.parent.host = "localhost";
+    tunnels = {
+      adoram = {
+        bindings = [
+          {
+            local.port = 19999;
+            remote.port = 19999;
+          }
+        ];
+        enable = true;
+        host = "adoram.thoughtfull.systems";
+        identity = "/etc/nixos/adoram-deploy-key";
+        port = 1980;
+        user = "root";
+      };
+    };
   };
   time.timeZone = "America/New_York";
   users.users = {

@@ -122,6 +122,7 @@
     };
     nullmailer.config.adminaddr = "technosophist@thoughtfull.systems";
     openssh.enable = true;
+    netdata.enable = true;
     vaultwarden.enable = true;
     webdav.enable = true;
     woodpecker-agents.agents.podman = {
@@ -167,6 +168,7 @@
       { name = "nixfiles"; }
       { name = "nixos-secrets"; }
     ];
+    netdata.parent.host = "localhost";
     notify-reboot = {
       from = "technosophist@thoughtfull.systems";
       to = "technosophist@thoughtfull.systems";
@@ -225,6 +227,10 @@
             reverse = true;
             local.port = 8004;
             remote.port = 8004;
+          }
+          {
+            local.port = 19999;
+            remote.port = 19999;
           }
         ];
         enable = true;

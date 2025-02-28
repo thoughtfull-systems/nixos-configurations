@@ -27,6 +27,7 @@
     certs."thoughtfull.systems" = {};
   };
   services = {
+    netdata.enable = true;
     nginx = {
       virtualHosts = {
         "thoughtfull.systems" = {
@@ -85,8 +86,10 @@
       from = "technosophist@thoughtfull.systems";
       to = "technosophist@thoughtfull.systems";
     };
+    netdata.mode = "parent";
     nginx.proxies = {
       "bw.thoughtfull.systems".backend = "http://localhost:8000";
+      "dashboard.thoughtfull.systems".backend = "http://localhost:19999";
       "git.thoughtfull.systems".backend = "http://localhost:8003";
       "social.thoughtfull.systems" = {
         backend = "http://localhost:8002";
