@@ -9,7 +9,7 @@ nix flake update --refresh --flake "${flakedir}" \
     secrets \
     thoughtfull
 
-sudo nixos-rebuild switch \
+sudo nixos-rebuild \
      --flake "${flakedir}" \
      --refresh \
      --override-input secrets "${flakedir}/../nixos-secrets" \
