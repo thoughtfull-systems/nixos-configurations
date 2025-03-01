@@ -61,11 +61,14 @@
       settings.GatewayPorts = "yes";
     };
   };
+  swapDevices = [
+    {
+      device = "/swapfile";
+    }
+  ];
   system = {
     autoUpgrade.flags = [
       "--override-input secrets git+ssh://git@nixos-secrets.github.com/thoughtfull-systems/nixos-secrets"
-      "-j 1"
-      "--cores 1"
     ];
     # This value determines the NixOS release from which the default
     # settings for stateful data, like file locations and database versions
