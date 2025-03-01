@@ -85,7 +85,6 @@
       Host adoram.thoughtfull.systems adoram
       Hostname adoram.thoughtfull.systems
       User root
-      Port 1980
 
       Host naarah
       Hostname naarah.lan
@@ -135,20 +134,16 @@
     desktop.enable = true;
     greek.enable = true;
     netdata.parent.host = "localhost";
-    tunnels = {
-      adoram = {
-        bindings = [
-          {
-            local.port = 19999;
-            remote.port = 19999;
-          }
-        ];
-        enable = true;
-        host = "adoram.thoughtfull.systems";
-        identity = "/etc/nixos/adoram-deploy-key";
-        port = 1980;
-        user = "root";
-      };
+    tunnels.adoram = {
+      bindings = [
+        {
+          local.port = 19999;
+          remote.port = 19999;
+        }
+      ];
+      enable = true;
+      host = "adoram.thoughtfull.systems";
+      identity = "/etc/nixos/adoram-deploy-key";
     };
   };
   time.timeZone = "America/New_York";

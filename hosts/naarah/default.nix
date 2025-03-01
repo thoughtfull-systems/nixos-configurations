@@ -155,8 +155,6 @@
       enable = true;
       host = "adoram.thoughtfull.systems";
       identity = "/etc/nixos/adoram-deploy-key";
-      port = 1980;
-      user = "root";
     };
   };
   users.users.root.openssh.authorizedKeys = config.users.users.technosophist.openssh.authorizedKeys;

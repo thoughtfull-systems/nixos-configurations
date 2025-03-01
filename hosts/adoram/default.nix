@@ -17,7 +17,7 @@
   ];
   networking = {
     domain = "thoughtfull.systems";
-    firewall.allowedTCPPorts = [ 22 80 443 1980 ];
+    firewall.allowedTCPPorts = [ 80 443 ];
     hostName = "adoram";
   };
   nixpkgs.hostPlatform = "aarch64-linux";
@@ -55,10 +55,7 @@
       enable = true;
     };
     nullmailer.config.adminaddr = "technosophist@thoughtfull.systems";
-    openssh = {
-      enable = true;
-      ports = [ 22 1980 ];
-    };
+    openssh.enable = true;
   };
   swapDevices = [
     {
