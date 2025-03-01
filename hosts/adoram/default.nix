@@ -57,8 +57,7 @@
     nullmailer.config.adminaddr = "technosophist@thoughtfull.systems";
     openssh = {
       enable = true;
-      ports = [ 1980 ];
-      settings.GatewayPorts = "yes";
+      ports = [ 22 1980 ];
     };
   };
   swapDevices = [
@@ -95,12 +94,8 @@
     nginx.proxies = {
       "bw.thoughtfull.systems".backend = "http://localhost:8000";
       "dashboard.thoughtfull.systems".backend = "http://localhost:19999";
-      "git.thoughtfull.systems".backend = "http://localhost:8003";
-      "social.thoughtfull.systems" = {
-        backend = "http://localhost:8002";
-      };
+      "social.thoughtfull.systems".backend = "http://localhost:8002";
       "webdav.thoughtfull.systems".backend = "http://localhost:8001";
-      "woodpecker.thoughtfull.systems".backend = "http://localhost:8004";
     };
     systemd-notify-failure = {
       from = "technosophist@thoughtfull.systems";

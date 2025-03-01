@@ -77,44 +77,12 @@
   };
   programs.zsh.enable = true;
   services = {
-    forgejo = {
-      enable = true;
-      settings = {
-        "git.timeout" = {
-          MIGRATE = 3600;
-        };
-        server = {
-          DOMAIN = "git.thoughtfull.systems";
-          ROOT_URL = "https://git.thoughtfull.systems/";
-        };
-      };
-    };
     gotosocial.enable = true;
+    netdata.enable = true;
     nullmailer.config.adminaddr = "technosophist@thoughtfull.systems";
     openssh.enable = true;
-    netdata.enable = true;
     vaultwarden.enable = true;
     webdav.enable = true;
-    woodpecker-agents.agents.podman = {
-      enable = true;
-      environment = {
-        DOCKER_HOST = "unix:///run/podman/podman.sock";
-        WOODPECKER_BACKEND = "docker";
-        WOODPECKER_LOG_LEVEL = "trace";
-      };
-      extraGroups = [ "podman" ];
-    };
-    woodpecker-server = {
-      enable = true;
-      environment = {
-        WOODPECKER_ADMIN = "technosophist";
-        WOODPECKER_FORGE_TIMEOUT = "30s";
-        WOODPECKER_FORGEJO = "true";
-        WOODPECKER_FORGEJO_URL = "https://git.thoughtfull.systems";
-        WOODPECKER_HOST = "https://woodpecker.thoughtfull.systems";
-        WOODPECKER_LOG_LEVEL = "trace";
-      };
-    };
   };
   system = {
     autoUpgrade.flags = [
@@ -162,62 +130,34 @@
       from = "technosophist@thoughtfull.systems";
       to = "technosophist@thoughtfull.systems";
     };
-    tunnels = {
-      adoram = {
-        bindings = [
-          {
-            reverse = true;
-            local.port = 22;
-            remote = {
-              address = "0.0.0.0";
-              port = 22;
-            };
-          }
-          {
-            reverse = true;
-            local.port = 8000;
-            remote.port = 8000;
-          }
-          {
-            reverse = true;
-            local.port = 8001;
-            remote.port = 8001;
-          }
-          {
-            reverse = true;
-            local.port = 8002;
-            remote.port = 8002;
-          }
-          {
-            reverse = true;
-            local.port = 8003;
-            remote.port = 8003;
-          }
-          {
-            reverse = true;
-            local.port = 8004;
-            remote.port = 8004;
-          }
-          {
-            local.port = 19999;
-            remote.port = 19999;
-          }
-        ];
-        enable = true;
-        host = "adoram.thoughtfull.systems";
-        identity = "/etc/nixos/adoram-deploy-key";
-        port = 1980;
-        user = "root";
-      };
+    tunnels.adoram = {
+      bindings = [
+        {
+          reverse = true;
+          local.port = 8000;
+          remote.port = 8000;
+        }
+        {
+          reverse = true;
+          local.port = 8001;
+          remote.port = 8001;
+        }
+        {
+          reverse = true;
+          local.port = 8002;
+          remote.port = 8002;
+        }
+        {
+          local.port = 19999;
+          remote.port = 19999;
+        }
+      ];
+      enable = true;
+      host = "adoram.thoughtfull.systems";
+      identity = "/etc/nixos/adoram-deploy-key";
+      port = 1980;
+      user = "root";
     };
   };
   users.users.root.openssh.authorizedKeys = config.users.users.technosophist.openssh.authorizedKeys;
-  virtualisation.podman = {
-    autoPrune.enable = true;
-    defaultNetwork.settings = {
-      dns_enabled = true;
-    };
-    dockerCompat = true;
-    enable = true;
-  };
 }
