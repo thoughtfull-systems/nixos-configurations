@@ -20,6 +20,7 @@
     firewall.allowedTCPPorts = [ 80 443 ];
     hostName = "adoram";
   };
+  nix.gc.options = "-d";
   nixpkgs.hostPlatform = "aarch64-linux";
   programs.zsh.enable = true;
   security.acme = {
