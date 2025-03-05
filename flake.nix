@@ -17,7 +17,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:thoughtfull-systems/home-manager/release-24.11";
     };
-    nixpkgs.url = "github:thoughtfull-systems/nixpkgs/nixos-24.11";
+    nixpkgs.url = "github:thoughtfull-nix/nixpkgs/nixos-24.11";
     secrets = {
       inputs = {
         agenix.follows = "agenix";
@@ -35,7 +35,7 @@
       };
       url = "github:thoughtfull-systems/nixfiles/nixos-24.11";
     };
-    unstable.url = "github:thoughtfull-systems/nixpkgs/nixpkgs-unstable";
+    unstable.url = "github:thoughtfull-nix/nixpkgs/nixos-unstable";
   };
   outputs = { nixos-hardware, nixpkgs, secrets, thoughtfull, ... }: {
     nixosConfigurations = {
