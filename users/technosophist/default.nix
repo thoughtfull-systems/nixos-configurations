@@ -2,13 +2,14 @@
   home-manager.users.technosophist = {
     home.packages = lib.mkIf config.thoughtfull.desktop.enable [ pkgs.proton-pass ];
     programs = {
-    git = {
-      enable = true;
-      userEmail = "technosophist@thoughtfull.systems";
-      userName = "technosophist";
+      git = {
+        enable = true;
+        userEmail = "technosophist@thoughtfull.systems";
+        userName = "technosophist";
+      };
+      zsh.enable = true;
     };
-    zsh.enable = true;
-  };
+    thoughtfull.clojure.clj-kondo-package = pkgs.unstable.clj-kondo;
   };
   users.users.technosophist = {
     description = "technosophist";
