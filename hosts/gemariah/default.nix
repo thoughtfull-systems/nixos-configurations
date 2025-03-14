@@ -100,7 +100,7 @@
     netdata.enable = true;
     printing.drivers = [ pkgs.cups-brother-mfcl2750dw ];
     tlp.settings = {
-      START_CHARGE_THRESH_BAT0 = 70;
+      START_CHARGE_THRESH_BAT0 = 100;
       STOP_CHARGE_THRESH_BAT0 = 100;
     };
   };
