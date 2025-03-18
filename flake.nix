@@ -15,7 +15,7 @@
     };
     home-manager = {
       inputs.nixpkgs.follows = "nixpkgs";
-      url = "github:thoughtfull-systems/home-manager/release-24.11";
+      url = "github:thoughtfull-nix/home-manager/release-24.11";
     };
     nixpkgs.url = "github:thoughtfull-nix/nixpkgs/nixos-24.11";
     secrets = {
