@@ -9,7 +9,10 @@
       };
       zsh.enable = true;
     };
-    thoughtfull.clojure.clj-kondo-package = pkgs.unstable.clj-kondo;
+    thoughtfull = {
+      clojure.clj-kondo-package = pkgs.unstable.clj-kondo;
+      rust.enable = true;
+    };
   };
   users.users.technosophist = {
     description = "technosophist";
