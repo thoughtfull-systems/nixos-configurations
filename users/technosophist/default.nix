@@ -10,6 +10,7 @@
       zsh.enable = true;
     };
     thoughtfull = {
+      aider.enable = true;
       clojure.clj-kondo-package = pkgs.unstable.clj-kondo;
       rust.enable = true;
     };
