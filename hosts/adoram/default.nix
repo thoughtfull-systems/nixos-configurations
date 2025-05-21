@@ -65,9 +65,12 @@
     }
   ];
   system = {
-    autoUpgrade.flags = [
-      "--override-input secrets git+ssh://git@nixos-secrets.github.com/thoughtfull-systems/nixos-secrets"
-    ];
+    autoUpgrade = {
+      flags = [
+        "--override-input secrets git+ssh://git@nixos-secrets.github.com/thoughtfull-systems/nixos-secrets"
+      ];
+      allowReboot = true;
+    };
     # This value determines the NixOS release from which the default
     # settings for stateful data, like file locations and database versions
     # on your system were taken. It‘s perfectly fine and recommended to leave
@@ -85,10 +88,7 @@
       { name = "nixfiles"; }
       { name = "nixos-secrets"; }
     ];
-    notify-reboot = {
-      from = "technosophist@thoughtfull.systems";
-      to = "technosophist@thoughtfull.systems";
-    };
+    notify-reboot.enable = false;
     netdata.mode = "parent";
     nginx.proxies = {
       "bw.thoughtfull.systems".backend = "http://localhost:8000";
