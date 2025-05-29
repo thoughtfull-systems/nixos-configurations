@@ -41,7 +41,7 @@
         gnome-terminal.enable = true;
         javascript = {
           enable = true;
-          nodejs-package = pkgs.nodejs_18;
+          nodejs-package = pkgs.nodejs_20;
         };
         services.syncthing-init.folders = {
           archive = {
