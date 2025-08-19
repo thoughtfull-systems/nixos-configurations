@@ -25,7 +25,7 @@
         home-manager.follows = "home-manager";
         nixpkgs.follows = "nixpkgs";
       };
-      url = "git+ssh://git@github.com/thoughtfull-systems/nixos-secrets";
+      url = "git+ssh://git@nixos-secrets.github.com/thoughtfull-systems/nixos-secrets";
     };
     thoughtfull = {
       inputs = {
