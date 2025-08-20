@@ -12,6 +12,7 @@
     thoughtfull = {
       aider.enable = true;
       clojure.clj-kondo-package = pkgs.unstable.clj-kondo;
+      mcp.enable = true;
       rust.enable = true;
     };
   };
