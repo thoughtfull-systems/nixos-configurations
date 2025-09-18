@@ -1,6 +1,13 @@
 { config, nixos-hardware, pkgs, secrets, thoughtfull, ... } : {
   boot = {
     binfmt.emulatedSystems = [ "aarch64-linux" ];
+    initrd = {
+      luks = {
+        devices.gemariah-root.crypttabExtraOpts = [ "fido2-device=auto" ];
+        fido2Support = false;
+      };
+      systemd.enable = true;
+    };
     loader = {
       efi.canTouchEfiVariables = true;
       systemd-boot.enable = true;
@@ -91,7 +98,14 @@
       User root
     '';
   };
-  security.acme.defaults.email = "technosophist@thoughtfull.systems";
+  security = {
+    acme.defaults.email = "technosophist@thoughtfull.systems";
+    pam = {
+      services.sudo.u2fAuth = true;
+      u2f.enable = true;
+    };
+    tpm2.enable = true;
+  };
   services = {
     displayManager.autoLogin = {
       enable = true;
@@ -149,7 +163,7 @@
   time.timeZone = "America/New_York";
   users.users = {
     root.openssh.authorizedKeys = config.users.users.technosophist.openssh.authorizedKeys;
-    technosophist.extraGroups = [ "adbusers" "docker" ];
+    technosophist.extraGroups = [ "adbusers" "docker" "tss" ];
   };
   virtualisation.docker = {
     autoPrune.enable = true;
