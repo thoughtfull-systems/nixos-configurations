@@ -12,6 +12,11 @@
         enable = true;
         userEmail = "technosophist@thoughtfull.systems";
         userName = "technosophist";
+        extraConfig = {
+          user = {
+            signingkey = "8AB56ACA";
+          };
+        };
       };
       zsh.enable = true;
     };
