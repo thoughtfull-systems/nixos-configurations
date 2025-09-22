@@ -8,6 +8,12 @@
       qrscan
     ]);
     programs = {
+      gpg = {
+        enable = true;
+        scdaemonSettings = {
+          disable-ccid = true;
+        };
+      };
       git = {
         enable = true;
         userEmail = "technosophist@thoughtfull.systems";
