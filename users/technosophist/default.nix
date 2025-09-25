@@ -20,7 +20,7 @@
         userName = "technosophist";
         extraConfig = {
           user = {
-            signingkey = "8AB56ACA";
+            signingkey = "DF2034C6";
           };
         };
       };
