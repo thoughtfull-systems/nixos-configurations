@@ -97,6 +97,7 @@
       Hostname naarah.lan
       User root
     '';
+    steam.enable = true;
   };
   security = {
     acme.defaults.email = "technosophist@thoughtfull.systems";
