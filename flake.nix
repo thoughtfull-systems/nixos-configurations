@@ -15,9 +15,9 @@
     };
     home-manager = {
       inputs.nixpkgs.follows = "nixpkgs";
-      url = "github:thoughtfull-nix/home-manager/release-25.05";
+      url = "github:thoughtfull-nix/home-manager/release-25.11";
     };
-    nixpkgs.url = "github:thoughtfull-nix/nixpkgs/nixos-25.05";
+    nixpkgs.url = "github:thoughtfull-nix/nixpkgs/nixos-25.11";
     secrets = {
       inputs = {
         agenix.follows = "agenix";
@@ -33,7 +33,7 @@
         nixpkgs.follows = "nixpkgs";
         unstable.follows = "unstable";
       };
-      url = "github:thoughtfull-systems/nixfiles/nixos-25.05";
+      url = "github:thoughtfull-systems/nixfiles/nixos-25.11";
     };
     unstable.url = "github:thoughtfull-nix/nixpkgs/nixos-unstable";
   };

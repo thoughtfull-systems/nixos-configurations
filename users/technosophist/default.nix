@@ -5,7 +5,6 @@
       paperkey
       proton-pass
       qrencode
-      qrscan
     ]);
     programs = {
       gpg = {

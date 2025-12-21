@@ -56,16 +56,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1758515241,
-        "narHash": "sha256-RXoWbPTi+r7B7OBRSSSyMM9mVujADN1AqONYKMYItzQ=",
+        "lastModified": 1766294622,
+        "narHash": "sha256-8qaJ0i8vmvmOMVseXwqacouZUqzQqwwlSdkMz7ApGq4=",
         "owner": "thoughtfull-nix",
         "repo": "home-manager",
-        "rev": "0658fdf42d1ac22a6a25c35ed6aafda46a7de74a",
+        "rev": "d7d4ff2a5d1ed7712315edb46b2616de665ee5ca",
         "type": "github"
       },
       "original": {
         "owner": "thoughtfull-nix",
-        "ref": "release-25.05",
+        "ref": "release-25.11",
         "repo": "home-manager",
         "type": "github"
       }
@@ -86,16 +86,16 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1762838379,
-        "narHash": "sha256-a4ZA62ihtOOCW4/SE/uuda5DtKt32sEX8jkOCf7xBa0=",
+        "lastModified": 1766295393,
+        "narHash": "sha256-Gl1G9M6XPNZOgd9MpOL1/jucZOwuurSEjX8ROfaTtNI=",
         "owner": "thoughtfull-nix",
         "repo": "nixpkgs",
-        "rev": "6ba0969f1286e8fd2d78f86ec8eae6766c9eec4b",
+        "rev": "99171c23dd40623d7e5303198dd467cc01e9a3b5",
         "type": "github"
       },
       "original": {
         "owner": "thoughtfull-nix",
-        "ref": "nixos-25.05",
+        "ref": "nixos-25.11",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -169,16 +169,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1758389415,
-        "narHash": "sha256-CgVjw3aGN0Bi1a8elNXEcL/Eq1WPzk0Ikuwt5G9EUNA=",
+        "lastModified": 1766285436,
+        "narHash": "sha256-SNTa/EyZvUdhRzVtmZETm/w+d7Uh1yWw4CU/HFye61s=",
         "owner": "thoughtfull-systems",
         "repo": "nixfiles",
-        "rev": "16a1922d73a655e1009663cc124f434922ecd104",
+        "rev": "44aacb17737ec4f5af89d90f79c3648188c5704c",
         "type": "github"
       },
       "original": {
         "owner": "thoughtfull-systems",
-        "ref": "nixos-25.05",
+        "ref": "nixos-25.11",
         "repo": "nixfiles",
         "type": "github"
       }
