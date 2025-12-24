@@ -28,7 +28,7 @@
     certs."thoughtfull.systems" = {};
   };
   services = {
-    netdata.enable = true;
+    # netdata.enable = true;
     nginx = {
       virtualHosts = {
         "thoughtfull.systems" = {

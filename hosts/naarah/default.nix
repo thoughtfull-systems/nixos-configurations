@@ -29,7 +29,7 @@
     technosophist = {
       home.stateVersion = "23.11";
       services.syncthing.extraOptions = [
-        "-gui-address=0.0.0.0:8384"
+        "--gui-address=0.0.0.0:8384"
       ];
       thoughtfull.services.syncthing-init.folders = {
         archive = {
@@ -78,7 +78,7 @@
   programs.zsh.enable = true;
   services = {
     gotosocial.enable = true;
-    netdata.enable = true;
+    # netdata.enable = true;
     nullmailer.config.adminaddr = "technosophist@thoughtfull.systems";
     openssh.enable = true;
     vaultwarden.enable = true;

@@ -1,6 +1,9 @@
 { config, nixos-hardware, pkgs, secrets, thoughtfull, ... } : {
   boot = {
-    binfmt.emulatedSystems = [ "aarch64-linux" ];
+    binfmt = {
+      addEmulatedSystemsToNixSandbox = true;
+      emulatedSystems = [ "aarch64-linux" ];
+    };
     initrd = {
       luks = {
         devices.gemariah-root.crypttabExtraOpts = [ "fido2-device=auto" ];
@@ -41,7 +44,7 @@
         tfl-org-faces
       ];
       services.syncthing.extraOptions = [
-        "-gui-address=0.0.0.0:8384"
+        "--gui-address=0.0.0.0:8384"
       ];
       thoughtfull = {
         clojure.enable = true;
@@ -112,7 +115,7 @@
       enable = true;
       user = "technosophist";
     };
-    netdata.enable = true;
+    # netdata.enable = true;
     printing.drivers = [ pkgs.cups-brother-mfcl2750dw ];
     tlp.settings = {
       START_CHARGE_THRESH_BAT0 = 100;
