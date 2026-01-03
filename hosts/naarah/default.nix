@@ -81,7 +81,6 @@
     # netdata.enable = true;
     nullmailer.config.adminaddr = "technosophist@thoughtfull.systems";
     openssh.enable = true;
-    vaultwarden.enable = true;
     webdav.enable = true;
   };
   system = {
