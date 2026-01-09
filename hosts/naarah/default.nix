@@ -112,20 +112,12 @@
     };
     restic = {
       exclude = [
-        "/var/lib/syncthing/archive/.stversions"
-        "/var/lib/syncthing/obsidian/.stversions"
-        "/var/lib/syncthing/org/.stversions"
-        "/var/lib/syncthing/sync/.stversions"
         "/home/technosophist/archive/.stversions"
         "/home/technosophist/obsidian/.stversions"
         "/home/technosophist/org/.stversions"
         "/home/technosophist/sync/.stversions"
       ];
       paths = [
-        "/var/lib/syncthing/archive"
-        "/var/lib/syncthing/obsidian"
-        "/var/lib/syncthing/org"
-        "/var/lib/syncthing/sync"
         "/home/technosophist/archive"
         "/home/technosophist/obsidian"
         "/home/technosophist/org"
