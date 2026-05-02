@@ -32,24 +32,12 @@
         "--gui-address=0.0.0.0:8384"
       ];
       thoughtfull.services.syncthing-init.folders = {
-        archive = {
-          devices = [ "gemariah" ];
-          enable = true;
-        };
-        obsidian = {
-          devices = [ "gemariah" "phone" ];
-          enable = true;
-        };
+        archive.enable = true;
+        obsidian.enable = true;
         obsidian-work.enable = false;
-        org = {
-          devices = [ "gemariah" "phone" ];
-          enable = true;
-        };
+        org.enable = true;
         org-work.enable = false;
-        sync = {
-          devices = [ "gemariah" "phone" ];
-          enable = true;
-        };
+        sync.enable = true;
       };
     };
     root = {

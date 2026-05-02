@@ -54,24 +54,12 @@
           nodejs-package = pkgs.nodejs_20;
         };
         services.syncthing-init.folders = {
-          archive = {
-            devices = [ "naarah" ];
-            enable = true;
-          };
-          obsidian = {
-            devices = [ "naarah" "phone" ];
-            enable = true;
-          };
+          archive.enable = true;
+          obsidian.enable = true;
           obsidian-work.enable = true;
-          org = {
-            devices = [ "naarah" "phone" ];
-            enable = true;
-          };
+          org.enable = true;
           org-work.enable = true;
-          sync = {
-            devices = [ "naarah" "phone" ];
-            enable = true;
-          };
+          sync.enable = true;
         };
       };
       xfconf.settings.pointers."TPPS2_Elan_TrackPoint/Acceleration" = 6.5;
