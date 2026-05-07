@@ -128,11 +128,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1778167777,
-        "narHash": "sha256-ovD/8Wkol/TXv71KuFTuuEUpZHAZIVjj2L6uUdLsMbk=",
+        "lastModified": 1778168510,
+        "narHash": "sha256-74sO0JGaK84P3P8xBSrBUSPgUJ+8oMCdSv4fwTL0bY8=",
         "ref": "refs/heads/main",
-        "rev": "74bcc4e440f0ab66cd0ce8bedb072c6f42c6db3e",
-        "revCount": 41,
+        "rev": "8ff4571f0a263153e23751f7d68a25219eb99525",
+        "revCount": 42,
         "type": "git",
         "url": "ssh://git@nixos-secrets.github.com/thoughtfull-systems/nixos-secrets"
       },

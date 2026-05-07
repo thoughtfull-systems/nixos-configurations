@@ -56,7 +56,6 @@
         services.syncthing-init.folders = {
           archive.enable = true;
           obsidian.enable = true;
-          obsidian-archive.enable = true;
           obsidian-work.enable = true;
           org.enable = true;
           org-work.enable = true;
