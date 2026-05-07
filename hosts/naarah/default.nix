@@ -34,6 +34,7 @@
       thoughtfull.services.syncthing-init.folders = {
         archive.enable = true;
         obsidian.enable = true;
+        obsidian-archive.enable = true;
         obsidian-work.enable = false;
         org.enable = true;
         org-work.enable = false;
